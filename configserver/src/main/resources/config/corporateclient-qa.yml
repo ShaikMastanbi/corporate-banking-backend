@@ -1,0 +1,9 @@
+build:
+  version: "3.0"
+corporateclient:
+  message: "Welcome to EazyBank accounts related QA APIs "
+  contactDetails:
+    name: "Shaik - QA Lead"
+    email: "skmastanbi523@gmail.com"
+  onCallSupport:
+    - 9121906387

@@ -1,0 +1,9 @@
+build:
+  version: "2.0"
+corporateclient:
+  message: "Welcome to  corporate cleint related prod APIs "
+  contactDetails:
+    name: "Mastanbi - Product Owner"
+    email: "skmastanbi523@gmail.com"
+  onCallSupport:
+    -9121906387

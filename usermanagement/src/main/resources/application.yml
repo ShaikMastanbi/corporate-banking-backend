@@ -1,0 +1,21 @@
+server:
+  port: 9043
+
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: "usermanagement"
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/Usermanagement?serverTimezone=UTC
+    username: root
+    password: Mastanbi@12
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true

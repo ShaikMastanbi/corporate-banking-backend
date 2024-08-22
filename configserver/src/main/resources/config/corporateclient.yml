@@ -1,0 +1,10 @@
+build:
+  version: "1.0"
+corporateclient:
+  message: "Welcome to corporate client related local APIs "
+  contactDetails:
+    name: "Mastanbi - Developer"
+    email: "skmastanbi523@gmail.com"
+  onCallSupport:
+    - 9121906387
+
