@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eurekaserver" />
         <module name="corporateclient" />
         <module name="usermanagement" />
         <module name="configserver" />
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="configserver" target="17" />
       <module name="corporateclient" target="17" />
+      <module name="eurekaserver" target="17" />
       <module name="usermanagement" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -22,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configserver" options="-parameters" />
       <module name="corporateclient" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
       <module name="usermanagement" options="-parameters" />
     </option>
   </component>

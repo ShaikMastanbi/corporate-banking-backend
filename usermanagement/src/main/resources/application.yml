@@ -19,3 +19,17 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8071/eureka/
+info:
+  app:
+    name: "accounts"
+    description: " Bank Accounts Application"
+    version: "1.0.0"

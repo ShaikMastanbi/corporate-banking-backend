@@ -7,6 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication
 @EnableConfigurationProperties(value = {CorporateClientContactInfoDto.class})
+
 public class CorporateclientApplication {
 
 	public static void main(String[] args) {
