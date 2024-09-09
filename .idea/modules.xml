@@ -6,7 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/corporate-banking.iml" filepath="$PROJECT_DIR$/.idea/corporate-banking.iml" />
       <module fileurl="file://$PROJECT_DIR$/corporateclient/corporateclient.iml" filepath="$PROJECT_DIR$/corporateclient/corporateclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gatewayserver/gatewayserver.iml" filepath="$PROJECT_DIR$/gatewayserver/gatewayserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/usermanagement/usermanagement.iml" filepath="$PROJECT_DIR$/usermanagement/usermanagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usermanagementservice/usermanagementservice.iml" filepath="$PROJECT_DIR$/usermanagementservice/usermanagementservice.iml" />
     </modules>
   </component>
 </project>
