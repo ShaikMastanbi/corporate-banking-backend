@@ -138,8 +138,20 @@ public class AuthController {
 
     @GetMapping("/validateToken")
     public String validateTokenId(@RequestHeader("Authorization") String token) {
+        System.out.println("Executing validateTokenId method");
         String userId = jwtService.validateTokenAndGetUserId(token);
         return userId != null ? userId : "Invalid token";
+    }
+
+    @GetMapping("/fetch/role/{username}")
+    public ResponseEntity<UserCredential> fetchUserDetailsByUsername(@PathVariable String username) {
+        Optional<UserCredential> userCredential = service.getUserDetailsByUsername(username);
+
+        if (userCredential.isPresent()) {
+            return ResponseEntity.ok(userCredential.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
 }

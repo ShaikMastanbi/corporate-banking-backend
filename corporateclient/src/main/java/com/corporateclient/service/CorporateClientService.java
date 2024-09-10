@@ -6,6 +6,7 @@ import com.corporateclient.entity.CorporateClient;
 import com.corporateclient.mapper.CorporateClientMapper;
 import com.corporateclient.repository.CorporateClientRepository;
 import com.corporateclient.repository.CreditHistoryRepository;
+import com.corporateclient.service.client.UsermanagementFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,12 @@ public class CorporateClientService {
     @Autowired
     private CorporateClientMapper corporateClientMapper;
 
+    @Autowired
+    private UsermanagementFeignClient usermanagementFeignClient;
+
     public CorporateClient addCorporateClient(AddCorporateClientRequest request) {
         CorporateClient corporateClient = corporateClientMapper.toEntity(request);
+
         return corporateClientRepository.save(corporateClient);
     }
 

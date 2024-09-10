@@ -50,14 +50,24 @@ eureka:
       defaultZone: http://localhost:8071/eureka/
 info:
   app:
-    name: "accounts"
-    description: " Bank Accounts Application"
+    name: "corporateclient"
+    description: " corporateclient  Application"
     version: "1.0.0"
 logging:
   level:
     com:
       accounts:
         com: DEBUG
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+usermanagementservice:
+  service:
+    url: http://localhost:9047
 
 
 

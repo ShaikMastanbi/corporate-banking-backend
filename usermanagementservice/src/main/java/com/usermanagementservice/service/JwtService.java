@@ -85,10 +85,12 @@ public class JwtService {
     }
 
     public String validateTokenAndGetUserId(String token) {
+        System.out.println("Started execution of validateTokenAndGetUserId");
         Claims claims = Jwts.parser()
                 .setSigningKey(SECRET)
                 .parseClaimsJws(token)
                 .getBody();
+        System.out.println("Completed execution of validateTokenAndGetUserId");
         return claims.getSubject();
     }
 }

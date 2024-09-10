@@ -81,7 +81,7 @@ public class AuthConfig {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(requestMatcher ->
                         requestMatcher
-                                .requestMatchers("/auth/register", "/auth/token", "/auth/validate", "/auth/fetch/{id}", "/auth/validateToken").permitAll()
+                                .requestMatchers("/auth/register", "/auth/token", "/auth/validate", "/auth/fetch/{id}", "/auth/validateToken","auth/fetch/role/{username}").permitAll()
                                 .anyRequest().authenticated())
                 .authenticationProvider(authenticationProvider()) // Ensure this is added
                 .build();

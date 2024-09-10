@@ -4,6 +4,8 @@ package com.corporateclient.controller;
 import com.corporateclient.dto.*;
 import com.corporateclient.entity.CorporateClient;
 import com.corporateclient.service.CorporateClientService;
+import com.corporateclient.service.client.UsermanagementFeignClient;
+import com.corporateclient.utils.CCUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -26,7 +28,78 @@ public class CorporateClientController {
     private Environment environment;
     @Autowired
     private CorporateClientContactInfoDto corporateClientContactInfoDto;
+    @Autowired
+    private UsermanagementFeignClient userManagementClient;
 
+    /*@GetMapping("/verifyCorporateClient")
+    public String verifyCorporateClient(@RequestHeader("Authorization") String token) {
+        System.out.println("Started execution of verifyCorporateClient");
+        // Ensure the token has the "Bearer" prefix
+        System.out.println("Token : "+token);
+        String orignalTokenValue = token;
+        String tokenWithBearer = token.startsWith("Bearer ") ? token : "Bearer " + token;
+        System.out.println("tokenWithBearer : "+tokenWithBearer);
+        // Call the validateTokenId method from usermanagementservice via Feign client
+        //String username = CCUtils.extractSubject(token);
+
+       String username = userManagementClient.validateTokenId(tokenWithBearer);
+        System.out.println("UserName : "+username);
+        if ("Invalid token".equals(username)) {
+            return "Invalid token received from usermanagementservice";
+        }
+
+        // Further processing, like checking the user's role, can be done here
+        System.out.println("Completed execution of verifyCorporateClient");
+        return "Valid corporate client: " + username;
+    }
+*/
+    /*@GetMapping("/getUserDetails/{id}")
+    public ResponseEntity<Optional<UserCredential>> getUserDetails(@PathVariable int id) {
+        // Use Feign client to call usermanagementservice's fetchAccountDetails method
+        ResponseEntity<Optional<UserCredential>> response = userManagementClient.fetchAccountDetails(id);
+
+        // Additional processing or role validation can be done here
+
+        // Return the response received from usermanagementservice
+        return response;
+    }*/
+
+  /* @Autowired
+   private SecurityServiceClient securityServiceClient;
+
+    @PostMapping("/create")
+    public ResponseEntity<CreateCorporateClientResponse> createCorporateClient(
+            @RequestHeader("Authorization") String token,
+            @RequestBody AddCorporateClientRequest request) {
+
+        // Extract token
+        String tokenValue = securityServiceClient.extractToken(token);
+
+        // Get username from token
+        String username = securityServiceClient.getUserName(tokenValue);
+
+        if (username == null || username.isEmpty()) {
+            throw new ApiException("Invalid token or user not found");
+        }
+
+        // Get roles by username
+        Set<String> userRoles = securityServiceClient.getUserRoles(username);
+
+        // Check if the user has CORPORATE_CLIENT role
+        if (userRoles.contains("CORPORATE_CLIENT")) {
+            // Proceed to create the corporate client
+            CorporateClient corporateClient = corporateClientService.addCorporateClient(request);
+            CreateCorporateClientResponse response = new CreateCorporateClientResponse(
+                    "success",
+                    "Corporate client added successfully",
+                    HttpStatus.CREATED.value(),
+                    corporateClient
+            );
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        } else {
+            throw new ApiException("User does not have CORPORATE_CLIENT role");
+        }
+    }*/
     @PostMapping("create")
     public ResponseEntity<CreateCorporateClientResponse> createCorporateClient(@RequestBody AddCorporateClientRequest request) {
         CorporateClient corporateClient = corporateClientService.addCorporateClient(request);

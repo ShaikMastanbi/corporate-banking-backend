@@ -121,6 +121,9 @@ public class AuthService {
         repository.save(credential);
         return "User added to the system";
     }
+    public Optional<UserCredential> getUserDetailsByUsername(String username) {
+        return repository.findByUserName(username);
+    }
     public String generateToken(String username) {
         return jwtService.generateToken(username);
     }
